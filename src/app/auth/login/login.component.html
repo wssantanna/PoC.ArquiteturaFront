@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title>Bem-vindo a Nicephotos</mat-card-title>
+    <mat-card-subtitle>Faça sua autenticação para acessar o painel de controle</mat-card-subtitle>
+    <br>
+    <mat-card-content>
+        <form>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button color="primary">Enviar</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
